@@ -31,9 +31,9 @@ public class TweetServiceImpl implements TweetService {
 
     }
 
-public Page<Tweet> getAllTweet (Pageable pageable){
-return tweetRepository.findAllBy(pageable);
-}
-
+    @Override
+    public Page<Tweet> findAllBy(Pageable pageable) {
+        return tweetRepository.findAllBy(pageable);
+    }
 }
 

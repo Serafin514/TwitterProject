@@ -1,6 +1,9 @@
 package pl.sda.bestgroup.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 import pl.sda.bestgroup.domain.CreateUserRequest;
 import pl.sda.bestgroup.domain.User;
@@ -18,20 +21,29 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUser(CreateUserRequest request) {
-
         if (userRepository.findByLogin(request.getLogin()) != null) {
             throw new UserExistExeption("User Exist at database");
-        } else {
-            User user = User.builder()
-                    .userName(request.getUserName())
-                    .userSurname(request.getUserSurname())
-                    .birth(request.getBirth())
-                    .login(request.getLogin())
-                    .phoneNumer(request.getPhoneNumer())
-                    .password(request.getPassword())
-                    .build();
-            userRepository.save(user);
         }
 
+        User user = User.builder()
+                .userName(request.getUserName())
+                .userSurname(request.getUserSurname())
+                .birth(request.getBirth())
+                .login(request.getLogin())
+                .phoneNumer(request.getPhoneNumer())
+                .password(request.getPassword())
+                .build();
+
+        userRepository.save(user);
+    }
+
+    @Override
+    public User findByLogin(String login) {
+        return userRepository.findByLogin(login);
+    }
+
+    @Override
+    public Page<User> findAllBy(Pageable pageable) {
+        return userRepository.findAllBy(pageable);
     }
 }

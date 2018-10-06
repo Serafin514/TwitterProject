@@ -1,11 +1,13 @@
 package pl.sda.bestgroup.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import pl.sda.bestgroup.domain.CreateTweetRequest;
+import pl.sda.bestgroup.domain.Tweet;
 import pl.sda.bestgroup.service.TweetService;
 
 @RestController
@@ -23,4 +25,10 @@ public class TwitterController {
     public void createTweet(@RequestBody CreateTweetRequest request) {
         tweetService.createTweet(request);
     }
+
+    @GetMapping("/tweet/all")
+    public Page<Tweet> getAllTweets(@PageableDefault(size = 4) Pageable pageable) {
+        return tweetService.findAllBy(pageable);
+    }
+
 }

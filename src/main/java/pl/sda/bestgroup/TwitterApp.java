@@ -1,9 +1,11 @@
 package pl.sda.bestgroup;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class TwitterApp {
     public static void main(String[] args) {
-        ApplicationContext context = App
+        SpringApplication.run(TwitterApp.class, args);
     }
 }
