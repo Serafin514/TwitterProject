@@ -12,10 +12,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-@Document(collection = "twitter")
+
+
+@Document(collection = "tweets")
+@Builder
 @Data
 @AllArgsConstructor
-@Builder
 public class Tweet {
     @Id
     private String id;
