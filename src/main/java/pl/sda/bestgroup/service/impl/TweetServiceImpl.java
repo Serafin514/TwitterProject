@@ -1,4 +1,6 @@
 package pl.sda.bestgroup.service.impl;
 
-public class TweetServiceImpl {
+import pl.sda.bestgroup.service.TweetService;
+
+public class TweetServiceImpl implements TweetService {
 }
