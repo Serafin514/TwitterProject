@@ -1,13 +1,14 @@
 package pl.sda.bestgroup.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+import pl.sda.bestgroup.service.TwitterService;
 
 @RestController
 public class TwitterController {
 
-    TwitterController twitterController;
+    TwitterService twitterService;
 
-    public TwitterController(TwitterController twitterController) {
-        this.twitterController = twitterController;
+    public TwitterController(TwitterService twitterService) {
+        this.twitterService = twitterService;
     }
 }
