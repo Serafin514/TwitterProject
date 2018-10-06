@@ -4,26 +4,14 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NonNull;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import java.time.LocalDateTime;
-
-@Document(collection = "users")
-@Builder
 @Data
-@AllArgsConstructor
 @Validated
-public class User {
-    @Id
-    private String id;
+public class CreateUserRequest {
 
     @NotNull
     private String login;//email
@@ -44,4 +32,3 @@ public class User {
     private String phoneNumer;
 
 }
-

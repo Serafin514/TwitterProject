@@ -1,4 +1,8 @@
 package pl.sda.bestgroup.domain.repository;
 
-public interface UserRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
+import pl.sda.bestgroup.domain.User;
+
+public interface UserRepository extends MongoRepository<User,String> {
+     User findByLogin(String login);
 }
