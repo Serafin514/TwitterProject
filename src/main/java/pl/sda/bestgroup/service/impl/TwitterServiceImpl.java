@@ -1,4 +1,4 @@
-package pl.sda.bestgroup.service;
+package pl.sda.bestgroup.service.impl;
 
 public class TwitterServiceImpl {
 }

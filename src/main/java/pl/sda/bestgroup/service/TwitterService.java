@@ -1,7 +1,6 @@
-package pl.sda.bestgroup;
-
+package pl.sda.bestgroup.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TwitterService {
+public interface TwitterService {
 }

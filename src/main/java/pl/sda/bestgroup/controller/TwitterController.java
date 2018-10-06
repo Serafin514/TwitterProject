@@ -1,4 +1,4 @@
-package pl.sda.bestgroup;
+package pl.sda.bestgroup.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

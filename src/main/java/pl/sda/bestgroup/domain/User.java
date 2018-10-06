@@ -1,4 +1,4 @@
-package pl.sda.bestgroup;
+package pl.sda.bestgroup.domain;
 
 import java.security.PrivateKey;
 import java.time.LocalDateTime;
