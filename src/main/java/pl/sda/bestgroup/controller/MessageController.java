@@ -22,7 +22,7 @@ public class MessageController {
         this.messageService = messageService;
     }
 
-    @PutMapping("/message/create")
+    @PostMapping("/message/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void createMessage(@RequestBody @Valid CreateMessageRequest request) {
         messageService.createMessage(request);

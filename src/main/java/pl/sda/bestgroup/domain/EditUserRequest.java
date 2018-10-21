@@ -11,7 +11,9 @@ import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Getter
 @Validated
@@ -31,7 +33,7 @@ public class EditUserRequest {
     @NotNull
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
-    private LocalDateTime birth;
+    private LocalDate birth;
 
     @NotNull
     private String phoneNumber;

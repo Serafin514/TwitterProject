@@ -26,7 +26,6 @@ public class UserServiceImpl implements UserService {
         }
 
         User user = User.builder()
-
                 .userName(request.getUserName())
                 .userSurname(request.getUserSurname())
                 .birth(request.getBirth())
