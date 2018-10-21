@@ -5,6 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import pl.sda.bestgroup.domain.User;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 public interface UserRepository extends MongoRepository<User, String> {
