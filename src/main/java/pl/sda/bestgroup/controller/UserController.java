@@ -6,6 +6,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import pl.sda.bestgroup.domain.CreateUserRequest;
+import pl.sda.bestgroup.domain.EditUserRequest;
 import pl.sda.bestgroup.domain.User;
 import pl.sda.bestgroup.service.UserService;
 
@@ -39,9 +40,9 @@ public class UserController {
     public Page<User> deleteUser(@RequestParam String id, @PageableDefault(size = 4) Pageable pageable) {
         return userService.deleteUserById(id, pageable);
     }
-//
-//    @PutMapping("/update/{id}")
-//    public void editUser(@PathVariable String id, RequestBody) {
-//        userService.editUser(id, request);
-//    }
+
+    @PutMapping("/update/{id}")
+    public void editUser(@PathVariable String id, @RequestBody EditUserRequest request) {
+        userService.editUser(id, request);
+    }
 }

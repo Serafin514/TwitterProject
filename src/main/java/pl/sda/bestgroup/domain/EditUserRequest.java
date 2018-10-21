@@ -4,14 +4,19 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
-@Data
+
+@Getter
 @Validated
-public class CreateUserRequest {
+@Builder
+public class EditUserRequest {
 
     @NotNull
     private String login;//email
@@ -30,5 +35,4 @@ public class CreateUserRequest {
 
     @NotNull
     private String phoneNumber;
-
 }
