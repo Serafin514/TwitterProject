@@ -14,12 +14,12 @@ import org.springframework.validation.annotation.Validated;
 import java.time.LocalDateTime;
 
 
-@Document(collection = "tweets")
+@Document(collection = "messages")
 @Builder
 @Data
 @AllArgsConstructor
 @Validated
-public class Tweet {
+public class Message {
     @Id
     private String id;
     private String message;
