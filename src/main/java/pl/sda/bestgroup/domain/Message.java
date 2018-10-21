@@ -22,9 +22,9 @@ import java.time.LocalDateTime;
 public class Message {
     @Id
     private String id;
+    private String userId;
     private String message;
     @JsonDeserialize(using= LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDateTime time;
-    private User user;
 }

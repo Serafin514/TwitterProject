@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
                 .userSurname(request.getUserSurname())
                 .birth(request.getBirth())
                 .login(request.getLogin())
-                .phoneNumer(request.getPhoneNumer())
+                .phoneNumber(request.getPhoneNumber())
                 .password(request.getPassword())
                 .build();
 

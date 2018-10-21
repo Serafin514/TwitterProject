@@ -10,6 +10,8 @@ import pl.sda.bestgroup.domain.CreateMessageRequest;
 import pl.sda.bestgroup.domain.Message;
 import pl.sda.bestgroup.service.MessageService;
 
+import javax.validation.Valid;
+
 @RestController
 public class MessageController {
 
@@ -22,7 +24,7 @@ public class MessageController {
 
     @PutMapping("/message/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createMessage(@RequestBody CreateMessageRequest request) {
+    public void createMessage(@RequestBody @Valid CreateMessageRequest request) {
         messageService.createMessage(request);
     }
 

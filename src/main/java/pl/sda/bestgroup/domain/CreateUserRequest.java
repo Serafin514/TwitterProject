@@ -29,6 +29,6 @@ public class CreateUserRequest {
     private LocalDateTime birth;
 
     @NotNull
-    private String phoneNumer;
+    private String phoneNumber;
 
 }

@@ -22,12 +22,7 @@ import java.time.LocalDateTime;
 @Builder
 public class CreateMessageRequest {
 
+        private String userId;
         @Size(max = 255)
         private String message;
-        @JsonDeserialize(using= LocalDateDeserializer.class)
-        @JsonSerialize(using = LocalDateSerializer.class)
-        private LocalDateTime time;
-        @NonNull
-        private User user;
-
 }

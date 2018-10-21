@@ -39,7 +39,7 @@ public class User {
     private LocalDateTime birth;
 
     @NotNull
-    private String phoneNumer;
+    private String phoneNumber;
 
 }
 
