@@ -35,14 +35,13 @@ public class UserController {
     }
 
 
-//    @DeleteMapping("/delete")
-//    public void deleteUser(@RequestParam String id) {
-//        userService.deleteUser(id);
-//    }
+    @DeleteMapping("/delete")
+    public Page<User> deleteUser(@RequestParam String id, @PageableDefault(size = 4) Pageable pageable) {
+        return userService.deleteUserById(id, pageable);
+    }
 //
 //    @PutMapping("/update/{id}")
 //    public void editUser(@PathVariable String id, RequestBody) {
 //        userService.editUser(id, request);
 //    }
-
 }
