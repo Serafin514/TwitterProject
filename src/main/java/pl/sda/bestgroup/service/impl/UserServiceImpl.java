@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pl.sda.bestgroup.domain.CreateUserRequest;
+import pl.sda.bestgroup.domain.EditUserRequest;
 import pl.sda.bestgroup.domain.User;
 import pl.sda.bestgroup.domain.repository.UserRepository;
 import pl.sda.bestgroup.service.UserService;
@@ -25,6 +26,7 @@ public class UserServiceImpl implements UserService {
         }
 
         User user = User.builder()
+
                 .userName(request.getUserName())
                 .userSurname(request.getUserSurname())
                 .birth(request.getBirth())
@@ -51,6 +53,19 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAllBy(pageable);
     }
 
+    @Override
+    public void editUser(String id, EditUserRequest request) {
+        User userById = userRepository.findById(id);
+
+        userById.setUserName(request.getUserName());
+        userById.setUserSurname(request.getUserSurname());
+        userById.setBirth(request.getBirth());
+        userById.setLogin(request.getLogin());
+        userById.setPhoneNumber(request.getPhoneNumber());
+        userById.setPassword(request.getPassword());
+
+        userRepository.save(userById);
+    }
 
 
 }

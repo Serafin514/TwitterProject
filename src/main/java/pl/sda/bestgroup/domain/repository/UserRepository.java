@@ -14,4 +14,6 @@ public interface UserRepository extends MongoRepository<User, String> {
     Page<User> findAllBy(Pageable pageable);
 
     Page<User> deleteUserById(String id, Pageable pageable);
+
+    User findById(String id);
 }
