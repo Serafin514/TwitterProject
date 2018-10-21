@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Validated
 @Builder
-public class CreateTweetRequest {
+public class CreateMessageRequest {
 
         @Size(max = 255)
         private String message;
