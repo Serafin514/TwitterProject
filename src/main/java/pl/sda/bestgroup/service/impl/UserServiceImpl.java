@@ -8,6 +8,7 @@ import pl.sda.bestgroup.domain.CreateUserRequest;
 import pl.sda.bestgroup.domain.EditUserRequest;
 import pl.sda.bestgroup.domain.User;
 import pl.sda.bestgroup.domain.repository.UserRepository;
+import pl.sda.bestgroup.exeptions.UserExistExeption;
 import pl.sda.bestgroup.service.UserService;
 
 @Service

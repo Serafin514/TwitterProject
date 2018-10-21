@@ -22,7 +22,6 @@ public class UserController {
         this.userService = userService;
     }
 
-
     @PostMapping("/user/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void createUser(@RequestBody @Valid CreateUserRequest request) {
@@ -39,8 +38,7 @@ public class UserController {
         return userService.findByLogin(login);
     }
 
-
-    @DeleteMapping("/user/delete")
+    @DeleteMapping("/user/delete/")
     public Page<User> deleteUser(@RequestParam String id, @PageableDefault(size = 4) Pageable pageable) {
         return userService.deleteUserById(id, pageable);
     }
